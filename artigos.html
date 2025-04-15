@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artigos Científicos sobre Pré-Natal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .articles-container {
+            margin: 40px 0;
+        }
+
+        .article-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .article-meta i {
+            margin-right: 5px;
+            color: #5F9EA0;
+        }
+
+        .article-meta span {
+            margin-right: 15px;
+        }
+
+        .article-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .article-card p {
+            margin-bottom: 20px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .article-tag {
+            background-color: #e9f5f5;
+            color: #5F9EA0;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .search-bar {
+            display: flex;
+            margin: 30px 0;
+            max-width: 600px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+        }
+
+        .search-bar button {
+            background-color: #5F9EA0;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        .sorting {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .sort-options {
+            display: flex;
+            align-items: center;
+        }
+
+        .sort-options label {
+            margin-right: 10px;
+        }
+
+        .sort-options select {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            outline: none;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .pagination a {
+            color: #5F9EA0;
+            padding: 8px 16px;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .pagination a.active {
+            background-color: #5F9EA0;
+            color: white;
+            border: 1px solid #5F9EA0;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #e9f5f5;
+        }
+
+        @media (max-width: 768px) {
+            .sorting {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .sort-options {
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Portal do Pré-Natal</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre o Pré-Natal</a></li>
+                    <li><a href="videos.html">Vídeos</a></li>
+                    <li><a href="artigos.html">Artigos Científicos</a></li>
+                    <li><a href="links.html">Links Úteis</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Artigos Científicos sobre Pré-Natal</h2>
+            <p>Acesse as pesquisas mais recentes e relevantes na área de saúde materno-infantil</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar artigos..." id="search-input">
+            <button type="button"><i class="fas fa-search"></i></button>
+        </div>
+        
+        <div class="sorting">
+            <div class="results-count">
+                <p>Exibindo <span id="results-number">6</span> artigos</p>
+            </div>
+            <div class="sort-options">
+                <label for="sort-select">Ordenar por:</label>
+                <select id="sort-select">
+                    <option value="recent">Mais recentes</option>
+                    <option value="oldest">Mais antigos</option>
+                    <option value="az">A-Z</option>
+                    <option value="za">Z-A</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="articles-container">
+            <div class="article-card">
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> 15/06/2023</span>
+                    <span><i class="far fa-user"></i> Silva et al.</span>
+                    <span><i class="far fa-building"></i> Universidade Federal do Rio de Janeiro</span>
+                </div>
+                <h3>A Importância do Acompanhamento Pré-Natal no Desenvolvimento Fetal</h3>
+                <p>Este estudo avaliou o impacto do acompanhamento pré-natal regular no desenvolvimento fetal, demonstrando correlações significativas entre o número de consultas realizadas e indicadores de saúde do recém-nascido.</p>
+                <div class="article-tags">
+                    <span class="article-tag">Saúde Fetal</span>
+                    <span class="article-tag">Consultas Pré-Natal</span>
+                    <span class="article-tag">Desenvolvimento</span>
+                </div>
+                <a href="#" class="btn">Ler Artigo</a>
+            </div>
+
+            <div class="article-card">
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> 03/05/2023</span>
+                    <span><i class="far fa-user"></i> Oliveira et al.</span>
+                    <span><i class="far fa-building"></i> Universidade de São Paulo</span>
+                </div>
+                <h3>Nutrição Materna e Resultados Perinatais: Uma Revisão Sistemática</h3>
+                <p>Esta revisão sistemática analisou estudos dos últimos 10 anos sobre o impacto da nutrição materna nos resultados perinatais, identificando os principais nutrientes essenciais para uma gestação saudável.</p>
+                <div class="article-tags">
+                    <span class="article-tag">Nutrição</span>
+                    <span class="article-tag">Alimentação</span>
+                    <span class="article-tag">Resultados Perinatais</span>
+                </div>
+                <a href="#" class="btn">Ler Artigo</a>
+            </div>
+
+            <div class="article-card">
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> 22/03/2023</span>
+                    <span><i class="far fa-user"></i> Santos et al.</span>
+                    <span><i class="far fa-building"></i> Universidade Federal de Minas Gerais</span>
+                </div>
+                <h3>Impacto da Atividade Física durante a Gestação na Saúde Materna e Fetal</h3>
+                <p>Pesquisa que analisou os efeitos da prática regular de atividade física durante a gestação, demonstrando benefícios para a saúde materna e desenvolvimento fetal quando realizada com orientação profissional.</p>
+                <div class="article-tags">
+                    <span class="article-tag">Atividade Física</span>
+                    <span class="article-tag">Exercícios</span>
+                    <span class="article-tag">Saúde Materna</span>
+                </div>
+                <a href="#" class="btn">Ler Artigo</a>
+            </div>
+
+            <div class="article-card">
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> 10/02/2023</span>
+                    <span><i class="far fa-user"></i> Ferreira et al.</span>
+                    <span><i class="far fa-building"></i> Universidade Federal do Rio Grande do Sul</span>
+                </div>
+                <h3>Diagnóstico Precoce de Complicações Gestacionais: Avanços e Perspectivas</h3>
+                <p>Estudo sobre as novas tecnologias e métodos para diagnóstico precoce de complicações durante a gestação, abordando os avanços recentes em exames pré-natais e monitoramento fetal.</p>
+                <div class="article-tags">
+                    <span class="article-tag">Diagnóstico</span>
+                    <span class="article-tag">Complicações</span>
+                    <span class="article-tag">Tecnologia</span>
+                </div>
+                <a href="#" class="btn">Ler Artigo</a>
+            </div>
+
+            <div class="article-card">
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> 05/01/2023</span>
+                    <span><i class="far fa-user"></i> Costa et al.</span>
+                    <span><i class="far fa-building"></i> Universidade Estadual de Campinas</span>
+                </div>
+                <h3>Fatores Psicossociais na Gestação e seu Impacto no Desenvolvimento Infantil</h3>
+                <p>Pesquisa longitudinal que acompanhou gestantes e seus filhos, analisando como fatores psicossociais durante a gestação podem influenciar o desenvolvimento cognitivo e emocional das crianças.</p>
+                <div class="article-tags">
+                    <span class="article-tag">Psicologia</span>
+                    <span class="article-tag">Desenvolvimento Infantil</span>
+                    <span class="article-tag">Fatores Psicossociais</span>
+                </div>
+                <a href="#" class="btn">Ler Artigo</a>
+            </div>
+
+            <div class="article-card">
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> 12/12/2022</span>
+                    <span><i class="far fa-user"></i> Almeida et al.</span>
+                    <span><i class="far fa-building"></i> Universidade Federal de Pernambuco</span>
+                </div>
+                <h3>Microbioma Materno e Programação da Saúde do Recém-Nascido</h3>
+                <p>Estudo sobre a relação entre o microbioma materno durante a gestação e a programação da saúde do recém-nascido, com foco nas implicações para o desenvolvimento do sistema imunológico.</p>
+                <div class="article-tags">
+                    <span class="article-tag">Microbioma</span>
+                    <span class="article-tag">Sistema Imunológico</span>
+                    <span class="article-tag">Saúde Neonatal</span>
+                </div>
+                <a href="#" class="btn">Ler Artigo</a>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">&raquo;</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Portal do Pré-Natal</h3>
+                    <p>Informações confiáveis para uma gestação saudável</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre o Pré-Natal</a></li>
+                        <li><a href="videos.html">Vídeos</a></li>
+                        <li><a href="artigos.html">Artigos Científicos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>Email: contato@portalprenatal.com.br</p>
+                    <p>Telefone: (XX) XXXX-XXXX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Portal do Pré-Natal. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Funcionalidade de pesquisa
+            const searchInput = document.getElementById('search-input');
+            const articleCards = document.querySelectorAll('.article-card');
+            const resultsNumber = document.getElementById('results-number');
+            
+            searchInput.addEventListener('keyup', function() {
+                const searchTerm = this.value.toLowerCase();
+                let visibleCount = 0;
+                
+                articleCards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const content = card.querySelector('p').textContent.toLowerCase();
+                    const tags = card.querySelectorAll('.article-tag');
+                    
+                    let tagMatch = false;
+                    tags.forEach(tag => {
+                        if (tag.textContent.toLowerCase().includes(searchTerm)) {
+                            tagMatch = true;
+                        }
+                    });
+                    
+                    if (title.includes(searchTerm) || content.includes(searchTerm) || tagMatch) {
+                        card.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                resultsNumber.textContent = visibleCount;
+            });
+            
+            // Funcionalidade de ordenação
+            const sortSelect = document.getElementById('sort-select');
+            const articlesContainer = document.querySelector('.articles-container');
+            
+            sortSelect.addEventListener('change', function() {
+                const sortValue = this.value;
+                const articleCardsArray = Array.from(articleCards);
+                
+                articleCardsArray.sort((a, b) => {
+                    const dateA = new Date(a.querySelector('.article-meta span:first-child').textContent.replace('Publicado em: ', ''));
+                    const dateB = new Date(b.querySelector('.article-meta span:first-child').textContent.replace('Publicado em: ', ''));
+                    const titleA = a.querySelector('h3').textContent;
+                    const titleB = b.querySelector('h3').textContent;
+                    
+                    if (sortValue === 'recent') {
+                        return dateB - dateA;
+                    } else if (sortValue === 'oldest') {
+                        return dateA - dateB;
+                    } else if (sortValue === 'az') {
+                        return titleA.localeCompare(titleB);
+                    } else if (sortValue === 'za') {
+                        return titleB.localeCompare(titleA);
+                    }
+                });
+                
+                articleCardsArray.forEach(card => {
+                    articlesContainer.appendChild(card);
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

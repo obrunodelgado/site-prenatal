@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeos sobre Pré-Natal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .video-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .video-card iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+        }
+
+        .video-info {
+            padding: 15px;
+        }
+
+        .video-info h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .video-info p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .video-category {
+            display: inline-block;
+            background-color: #e9f5f5;
+            color: #5F9EA0;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .category-filter {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .filter-button {
+            background-color: #f8f9fa;
+            border: 1px solid #5F9EA0;
+            color: #5F9EA0;
+            padding: 8px 15px;
+            margin: 0 5px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-button:hover, .filter-button.active {
+            background-color: #5F9EA0;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Portal do Pré-Natal</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre o Pré-Natal</a></li>
+                    <li><a href="videos.html">Vídeos</a></li>
+                    <li><a href="artigos.html">Artigos Científicos</a></li>
+                    <li><a href="links.html">Links Úteis</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Vídeos Informativos sobre Pré-Natal</h2>
+            <p>Assista aos melhores vídeos sobre gestação, pré-natal e cuidados com o bebê</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="category-filter">
+            <button class="filter-button active" data-category="all">Todos</button>
+            <button class="filter-button" data-category="consultas">Consultas</button>
+            <button class="filter-button" data-category="alimentacao">Alimentação</button>
+            <button class="filter-button" data-category="exercicios">Exercícios</button>
+            <button class="filter-button" data-category="desenvolvimento">Desenvolvimento</button>
+            <button class="filter-button" data-category="parto">Parto</button>
+        </div>
+
+        <div class="video-container">
+            <div class="video-card" data-category="consultas">
+                <iframe src="https://www.youtube.com/embed/qHXKm05DG70" title="A Importância do Pré-Natal" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h3>A Importância do Pré-Natal</h3>
+                    <p>Descubra por que as consultas regulares são essenciais durante a gestação.</p>
+                    <span class="video-category">Consultas</span>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="alimentacao">
+                <iframe src="https://www.youtube.com/embed/ld7FuLsL_Aw" title="Alimentação na Gravidez" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h3>Alimentação na Gravidez</h3>
+                    <p>Dicas de alimentação saudável para gestantes e quais alimentos evitar.</p>
+                    <span class="video-category">Alimentação</span>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="exercicios">
+                <iframe src="https://www.youtube.com/embed/1m8OsZdKVJc" title="Exercícios Seguros na Gravidez" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h3>Exercícios Seguros na Gravidez</h3>
+                    <p>Aprenda quais exercícios são adequados para cada fase da gestação.</p>
+                    <span class="video-category">Exercícios</span>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="desenvolvimento">
+                <iframe src="https://www.youtube.com/embed/qa-ZyzQ58ZA" title="Desenvolvimento do Bebê" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h3>Desenvolvimento do Bebê</h3>
+                    <p>Acompanhe o desenvolvimento do bebê semana a semana.</p>
+                    <span class="video-category">Desenvolvimento</span>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="parto">
+                <iframe src="https://www.youtube.com/embed/D4SU4-Um76M" title="Preparação para o Parto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h3>Preparação para o Parto</h3>
+                    <p>Como se preparar física e emocionalmente para o momento do parto.</p>
+                    <span class="video-category">Parto</span>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="consultas">
+                <iframe src="https://www.youtube.com/embed/G6pJwqEG-OU" title="Exames Importantes no Pré-Natal" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h3>Exames Importantes no Pré-Natal</h3>
+                    <p>Conheça os principais exames realizados durante o acompanhamento pré-natal.</p>
+                    <span class="video-category">Consultas</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Portal do Pré-Natal</h3>
+                    <p>Informações confiáveis para uma gestação saudável</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre o Pré-Natal</a></li>
+                        <li><a href="videos.html">Vídeos</a></li>
+                        <li><a href="artigos.html">Artigos Científicos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>Email: contato@portalprenatal.com.br</p>
+                    <p>Telefone: (XX) XXXX-XXXX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Portal do Pré-Natal. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Filtro de categorias para os vídeos
+            const filterButtons = document.querySelectorAll('.filter-button');
+            const videoCards = document.querySelectorAll('.video-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove a classe 'active' de todos os botões
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Adiciona a classe 'active' ao botão clicado
+                    this.classList.add('active');
+                    
+                    // Obtém a categoria selecionada
+                    const selectedCategory = this.getAttribute('data-category');
+                    
+                    // Filtra os vídeos com base na categoria
+                    videoCards.forEach(card => {
+                        if (selectedCategory === 'all' || card.getAttribute('data-category') === selectedCategory) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

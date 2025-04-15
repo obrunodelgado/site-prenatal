@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Pré-Natal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .about-section {
+            margin: 50px 0;
+        }
+
+        .about-section h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .about-section h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: #5F9EA0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .about-text {
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .section-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #5F9EA0;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid #5F9EA0;
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid #fff;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid #fff;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-content h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .timeline-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .accordion {
+            margin: 30px 0;
+        }
+
+        .accordion-item {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .accordion-header {
+            background-color: #fff;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background-color: #f8f9fa;
+        }
+
+        .accordion-header h4 {
+            margin: 0;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        .accordion-content {
+            background-color: #f8f9fa;
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content p {
+            padding: 20px 0;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background-color: #e9f5f5;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        @media screen and (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-container::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            .left::after, .right::after {
+                left: 22px;
+            }
+
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Portal do Pré-Natal</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre o Pré-Natal</a></li>
+                    <li><a href="videos.html">Vídeos</a></li>
+                    <li><a href="artigos.html">Artigos Científicos</a></li>
+                    <li><a href="links.html">Links Úteis</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>O que é o Pré-Natal?</h2>
+            <p>Entenda a importância do acompanhamento médico durante a gestação</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="about-section">
+            <div class="two-column">
+                <div>
+                    <h3>Definição e Importância</h3>
+                    <p class="about-text">O pré-natal é um conjunto de consultas e exames realizados durante a gravidez para acompanhar o desenvolvimento do bebê e a saúde da mãe. Este acompanhamento é fundamental para identificar e prevenir complicações, garantindo uma gestação mais segura e saudável.</p>
+                    <p class="about-text">Estudos mostram que gestantes que realizam adequadamente o pré-natal têm menos complicações durante a gravidez e o parto, além de reduzirem significativamente os riscos de mortalidade materna e infantil.</p>
+                </div>
+                <div>
+                    <img src="img/placeholder-5.jpg" alt="Consulta pré-natal" class="section-img">
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h3>Quando Iniciar o Pré-Natal</h3>
+            <p class="about-text">O acompanhamento pré-natal deve começar assim que a gravidez for confirmada, idealmente até a 12ª semana de gestação. Quanto mais cedo a mulher iniciar as consultas, maiores são as chances de um bom acompanhamento e identificação precoce de possíveis problemas.</p>
+            <p class="about-text">Mesmo que a descoberta da gravidez aconteça após este período, a gestante deve procurar imediatamente um serviço de saúde para iniciar o acompanhamento.</p>
+        </section>
+
+        <section class="about-section">
+            <h3>Cronograma de Consultas</h3>
+            <p class="about-text">De acordo com o Ministério da Saúde, o cronograma mínimo de consultas para uma gestação de baixo risco é:</p>
+            
+            <div class="timeline">
+                <div class="timeline-container left">
+                    <div class="timeline-content">
+                        <h4>1º Trimestre</h4>
+                        <p>Pelo menos uma consulta, preferencialmente até a 12ª semana. Neste período são solicitados os primeiros exames e é feita a avaliação inicial da saúde materna.</p>
+                    </div>
+                </div>
+                <div class="timeline-container right">
+                    <div class="timeline-content">
+                        <h4>2º Trimestre</h4>
+                        <p>Consultas a cada 4 semanas, geralmente nas semanas 16, 20, 24 e 28. Neste período é realizado o ultrassom morfológico e são monitorados o ganho de peso e o crescimento fetal.</p>
+                    </div>
+                </div>
+                <div class="timeline-container left">
+                    <div class="timeline-content">
+                        <h4>3º Trimestre</h4>
+                        <p>Consultas quinzenais até a 36ª semana, e semanais a partir da 37ª semana até o parto. Nesta fase são intensificados os exames para acompanhar o bem-estar fetal e preparar para o parto.</p>
+                    </div>
+                </div>
+                <div class="timeline-container right">
+                    <div class="timeline-content">
+                        <h4>Pós-Parto</h4>
+                        <p>Uma consulta entre 7 e 10 dias após o parto, e outra entre 30 e 42 dias. O acompanhamento pós-parto é essencial para verificar a recuperação materna e o desenvolvimento inicial do bebê.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h3>Exames Realizados Durante o Pré-Natal</h3>
+            <p class="about-text">Durante o acompanhamento pré-natal, diversos exames são solicitados para avaliar a saúde da mãe e do bebê. Os principais são:</p>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>Exames de Sangue</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Hemograma completo, tipagem sanguínea e fator Rh, glicemia em jejum, teste de tolerância à glicose, sorologias para HIV, sífilis, toxoplasmose, rubéola, citomegalovírus, hepatites B e C, entre outros. Estes exames são fundamentais para identificar condições como anemia, diabetes gestacional e infecções que possam afetar o feto.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>Exames de Urina</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Urina tipo I e urocultura para identificar infecções urinárias, que são comuns durante a gestação e podem levar a complicações se não tratadas. A proteinúria também é verificada para monitorar sinais de pré-eclâmpsia.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>Ultrassonografias</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Ultrassom obstétrico no primeiro trimestre para confirmar a idade gestacional, ultrassom morfológico no segundo trimestre para avaliar a formação dos órgãos do bebê, e ultrassom com Doppler no terceiro trimestre para verificar o fluxo sanguíneo e o bem-estar fetal.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>Exames Específicos</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Teste do pezinho ampliado, amniocentese, cordocentese e outros exames podem ser solicitados em casos específicos, como gravidez de alto risco ou histórico familiar de doenças genéticas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h3>Cuidados Essenciais Durante a Gestação</h3>
+            <div class="two-column">
+                <div>
+                    <img src="img/placeholder-6.jpg" alt="Gestante fazendo exercícios" class="section-img">
+                </div>
+                <div>
+                    <p class="about-text">Além das consultas e exames, é importante que a gestante adote hábitos saudáveis durante a gravidez:</p>
+                    <ul class="about-text">
+                        <li><strong>Alimentação balanceada:</strong> Rica em nutrientes essenciais como ácido fólico, ferro, cálcio e proteínas.</li>
+                        <li><strong>Hidratação adequada:</strong> Beber pelo menos 2 litros de água por dia.</li>
+                        <li><strong>Atividade física moderada:</strong> Sob orientação médica, como caminhadas, natação e yoga para gestantes.</li>
+                        <li><strong>Descanso adequado:</strong> Dormir bem e evitar esforço excessivo.</li>
+                        <li><strong>Evitar álcool, tabaco e drogas:</strong> Estas substâncias podem causar malformações e outros problemas ao bebê.</li>
+                        <li><strong>Medicamentos apenas com prescrição médica:</strong> Muitos remédios são contraindicados na gestação.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-section">
+            <h3>Comece Seu Pré-Natal Agora</h3>
+            <p>Se você está grávida ou suspeita que possa estar, não deixe de procurar um serviço de saúde para iniciar seu acompanhamento pré-natal. Lembre-se: cuidar da sua saúde é cuidar do seu bebê!</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn">Encontrar Serviço de Saúde</a>
+                <a href="links.html" class="btn">Recursos Úteis</a>
+            </div>
+        </div>
+
+        <section class="about-section">
+            <h3>Perguntas Frequentes</h3>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>O pré-natal é gratuito no Brasil?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Sim, o acompanhamento pré-natal é oferecido gratuitamente pelo Sistema Único de Saúde (SUS) em todas as Unidades Básicas de Saúde do país. Gestantes têm direito a todas as consultas, exames e procedimentos necessários durante a gravidez.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>Qual a diferença entre pré-natal de baixo e alto risco?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>O pré-natal de baixo risco é realizado para gestantes que não apresentam fatores que aumentam as chances de complicações. Já o pré-natal de alto risco é destinado a gestantes com condições que podem comprometer a saúde materna ou fetal, como hipertensão, diabetes, gestação múltipla, entre outros. Nestes casos, o acompanhamento é mais intensivo e pode incluir consultas com especialistas e exames adicionais.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>É necessário fazer todos os exames solicitados?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Sim, todos os exames solicitados pelo médico durante o pré-natal são importantes para garantir a saúde da mãe e do bebê. Alguns exames podem detectar problemas que não apresentam sintomas, mas que, se não tratados, podem causar complicações graves.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>O pai ou acompanhante pode participar das consultas?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Sim, a participação do pai ou de outro acompanhante é bastante recomendada durante as consultas pré-natais. Isso fortalece o vínculo familiar e permite que ambos recebam orientações importantes sobre a gestação, o parto e os cuidados com o bebê.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>Posso escolher o tipo de parto durante o pré-natal?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Sim, durante o pré-natal é o momento ideal para discutir com o médico sobre as opções de parto. A gestante pode expressar suas preferências e elaborar um plano de parto, lembrando que a decisão final deve considerar aspectos clínicos e as condições de saúde da mãe e do bebê no momento do nascimento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Portal do Pré-Natal</h3>
+                    <p>Informações confiáveis para uma gestação saudável</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre o Pré-Natal</a></li>
+                        <li><a href="videos.html">Vídeos</a></li>
+                        <li><a href="artigos.html">Artigos Científicos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>Email: contato@portalprenatal.com.br</p>
+                    <p>Telefone: (XX) XXXX-XXXX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Portal do Pré-Natal. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Funcionalidade do acordeão
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

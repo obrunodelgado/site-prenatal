@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links Úteis sobre Pré-Natal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .links-container {
+            margin: 40px auto;
+            max-width: 1200px;
+        }
+
+        .links-category {
+            margin-bottom: 40px;
+        }
+
+        .links-category h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #5F9EA0;
+            text-align: center;
+        }
+
+        .link-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            position: relative;
+            height: 100%;
+        }
+
+        .link-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .link-card-header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        .link-card-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e9f5f5;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .link-card-icon i {
+            font-size: 24px;
+            color: #5F9EA0;
+        }
+
+        .link-card-title {
+            flex: 1;
+        }
+
+        .link-card-title h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .link-card-title p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .link-card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .link-card-body p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .resource-tag {
+            display: inline-block;
+            background-color: #e9f5f5;
+            color: #5F9EA0;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .resource-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 0;
+            margin-top: auto;
+            padding-bottom: 50px; /* Espaço para o ícone */
+        }
+
+        .external-link-icon {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: #5F9EA0;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .link-card:hover .external-link-icon {
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .link-card-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .link-card-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Portal do Pré-Natal</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre o Pré-Natal</a></li>
+                    <li><a href="videos.html">Vídeos</a></li>
+                    <li><a href="artigos.html">Artigos Científicos</a></li>
+                    <li><a href="links.html">Links Úteis</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Links e Recursos Úteis</h2>
+            <p>Uma seleção dos melhores sites, plataformas e recursos sobre pré-natal e saúde materno-infantil</p>
+        </div>
+    </section>
+
+    <main class="container links-container">
+        <div class="links-category">
+            <h3>Sites Oficiais e Órgãos de Saúde</h3>
+            <div class="links-grid">
+                <div class="link-card" data-url="https://www.gov.br/saude/pt-br">
+                    <div class="link-card-header">
+                        <div class="link-card-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <div class="link-card-title">
+                            <h4>Ministério da Saúde</h4>
+                            <p><i class="fas fa-globe"></i> gov.br</p>
+                        </div>
+                    </div>
+                    <div class="link-card-body">
+                        <p>Portal oficial do Ministério da Saúde com informações sobre o pré-natal no SUS, direitos da gestante e cuidados durante a gravidez.</p>
+                        <div class="resource-tags">
+                            <span class="resource-tag">Oficial</span>
+                            <span class="resource-tag">SUS</span>
+                            <span class="resource-tag">Políticas Públicas</span>
+                        </div>
+                    </div>
+                    <div class="external-link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+
+                <div class="link-card" data-url="https://www.who.int/health-topics/maternal-health">
+                    <div class="link-card-header">
+                        <div class="link-card-icon">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <div class="link-card-title">
+                            <h4>Organização Mundial da Saúde</h4>
+                            <p><i class="fas fa-globe"></i> who.int</p>
+                        </div>
+                    </div>
+                    <div class="link-card-body">
+                        <p>Diretrizes e recomendações internacionais sobre cuidados pré-natais, baseadas em evidências científicas atualizadas.</p>
+                        <div class="resource-tags">
+                            <span class="resource-tag">Internacional</span>
+                            <span class="resource-tag">Diretrizes</span>
+                            <span class="resource-tag">Recomendações</span>
+                        </div>
+                    </div>
+                    <div class="external-link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+
+                <div class="link-card" data-url="https://www.sbp.com.br">
+                    <div class="link-card-header">
+                        <div class="link-card-icon">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <div class="link-card-title">
+                            <h4>Sociedade Brasileira de Pediatria</h4>
+                            <p><i class="fas fa-globe"></i> sbp.com.br</p>
+                        </div>
+                    </div>
+                    <div class="link-card-body">
+                        <p>Informações científicas sobre cuidados infantis desde a gestação, com orientações para gestantes e profissionais de saúde.</p>
+                        <div class="resource-tags">
+                            <span class="resource-tag">Sociedade Médica</span>
+                            <span class="resource-tag">Pediatria</span>
+                            <span class="resource-tag">Saúde Infantil</span>
+                        </div>
+                    </div>
+                    <div class="external-link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="links-category">
+            <h3>Portais Informativos</h3>
+            <div class="links-grid">
+                <div class="link-card" data-url="https://bvsms.saude.gov.br">
+                    <div class="link-card-header">
+                        <div class="link-card-icon">
+                            <i class="fas fa-book-medical"></i>
+                        </div>
+                        <div class="link-card-title">
+                            <h4>Biblioteca Virtual em Saúde</h4>
+                            <p><i class="fas fa-globe"></i> bvs.saude.gov.br</p>
+                        </div>
+                    </div>
+                    <div class="link-card-body">
+                        <p>Acervo de publicações científicas e materiais educativos sobre saúde materna e pré-natal, com acesso gratuito.</p>
+                        <div class="resource-tags">
+                            <span class="resource-tag">Biblioteca</span>
+                            <span class="resource-tag">Publicações</span>
+                            <span class="resource-tag">Acesso Livre</span>
+                        </div>
+                    </div>
+                    <div class="external-link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+
+                <div class="link-card" data-url="https://portal.fiocruz.br/saude-da-mulher">
+                    <div class="link-card-header">
+                        <div class="link-card-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="link-card-title">
+                            <h4>Portal Saúde da Mulher</h4>
+                            <p><i class="fas fa-globe"></i> portal.fiocruz.br</p>
+                        </div>
+                    </div>
+                    <div class="link-card-body">
+                        <p>Conteúdo sobre saúde feminina com seção especial sobre gravidez, pré-natal e direitos da gestante no Brasil.</p>
+                        <div class="resource-tags">
+                            <span class="resource-tag">Mulher</span>
+                            <span class="resource-tag">Direitos</span>
+                            <span class="resource-tag">Gravidez</span>
+                        </div>
+                    </div>
+                    <div class="external-link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+
+                <div class="link-card" data-url="https://www.periodicos.capes.gov.br">
+                    <div class="link-card-header">
+                        <div class="link-card-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="link-card-title">
+                            <h4>Portal de Periódicos CAPES</h4>
+                            <p><i class="fas fa-globe"></i> periodicos.capes.gov.br</p>
+                        </div>
+                    </div>
+                    <div class="link-card-body">
+                        <p>Acesso a artigos científicos sobre obstetrícia, pré-natal e saúde materno-infantil para estudantes e pesquisadores.</p>
+                        <div class="resource-tags">
+                            <span class="resource-tag">Acadêmico</span>
+                            <span class="resource-tag">Pesquisa</span>
+                            <span class="resource-tag">Artigos</span>
+                        </div>
+                    </div>
+                    <div class="external-link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="links-category">
+            <h3>Aplicativos e Ferramentas</h3>
+            <div class="links-grid">
+                <div class="link-card" data-url="https://play.google.com/store/search?q=gestacao+app&c=apps">
+                    <div class="link-card-header">
+                        <div class="link-card-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="link-card-title">
+                            <h4>Mãe Conectada</h4>
+                            <p><i class="fab fa-android"></i> <i class="fab fa-apple"></i> App gratuito</p>
+                        </div>
+                    </div>
+                    <div class="link-card-body">
+                        <p>Aplicativo que acompanha a gestação semana a semana, com lembretes de consultas e informações sobre o desenvolvimento do bebê.</p>
+                        <div class="resource-tags">
+                            <span class="resource-tag">Aplicativo</span>
+                            <span class="resource-tag">Gratuito</span>
+                            <span class="resource-tag">Acompanhamento</span>
+                        </div>
+                    </div>
+                    <div class="external-link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+
+                <div class="link-card" data-url="https://www.gestacaobebe.com.br/calculadora-gestacional/">
+                    <div class="link-card-header">
+                        <div class="link-card-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="link-card-title">
+                            <h4>Calculadora Gestacional</h4>
+                            <p><i class="fas fa-globe"></i> gestacaobebe.com.br</p>
+                        </div>
+                    </div>
+                    <div class="link-card-body">
+                        <p>Ferramenta online para calcular a data provável do parto, idade gestacional e principais marcos do desenvolvimento fetal.</p>
+                        <div class="resource-tags">
+                            <span class="resource-tag">Calculadora</span>
+                            <span class="resource-tag">Online</span>
+                            <span class="resource-tag">Planejamento</span>
+                        </div>
+                    </div>
+                    <div class="external-link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+
+                <div class="link-card" data-url="https://play.google.com/store/search?q=agenda+gestante&c=apps">
+                    <div class="link-card-header">
+                        <div class="link-card-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="link-card-title">
+                            <h4>Agenda da Gestante</h4>
+                            <p><i class="fab fa-android"></i> <i class="fab fa-apple"></i> App gratuito</p>
+                        </div>
+                    </div>
+                    <div class="link-card-body">
+                        <p>Aplicativo para organizar consultas, exames e compromissos durante a gestação, com lembretes e orientações personalizadas.</p>
+                        <div class="resource-tags">
+                            <span class="resource-tag">Organização</span>
+                            <span class="resource-tag">Lembretes</span>
+                            <span class="resource-tag">Acompanhamento</span>
+                        </div>
+                    </div>
+                    <div class="external-link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Portal do Pré-Natal</h3>
+                    <p>Informações confiáveis para uma gestação saudável</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre o Pré-Natal</a></li>
+                        <li><a href="videos.html">Vídeos</a></li>
+                        <li><a href="artigos.html">Artigos Científicos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>Email: contato@portalprenatal.com.br</p>
+                    <p>Telefone: (XX) XXXX-XXXX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Portal do Pré-Natal. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tornar os cards clicáveis
+            const linkCards = document.querySelectorAll('.link-card');
+            
+            linkCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const url = this.getAttribute('data-url');
+                    if (url) {
+                        window.open(url, '_blank');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
