@@ -273,17 +273,92 @@ footer {
     transform: translateY(-5px);
 }
 
+/* Menu móvel - itens escondidos por padrão em dispositivos maiores */
+.menu-toggle, .menu-close {
+    display: none;
+}
+
+.overlay {
+    display: none;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
+    /* Menu hamburguer para dispositivos móveis */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        color: #5F9EA0;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+    
+    header .container {
+        position: relative;
+    }
+    
+    header h1 {
+        text-align: center;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+    
+    header nav {
+        width: 100%;
+    }
+    
     header nav ul {
         flex-direction: column;
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 70%;
+        height: 100vh;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        padding: 60px 20px 20px;
+        transition: left 0.3s ease;
+        z-index: 1001;
+    }
+    
+    header nav.active ul {
+        left: 0;
     }
     
     header nav ul li {
         margin-right: 0;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        text-align: left;
+    }
+
+    .menu-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #5F9EA0;
+        display: block;
     }
     
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 1000;
+    }
+    
+    .overlay.active {
+        display: block;
+    }
+    
+    /* Resto do estilo responsivo */
     .hero h2 {
         font-size: 2rem;
     }

@@ -253,6 +253,10 @@
     <header>
         <div class="container">
             <h1>Portal do Pré-Natal</h1>
+            <!-- Botão de menu hamburguer para dispositivos móveis -->
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
             <nav>
                 <ul>
                     <li><a href="index.html">Início</a></li>
@@ -260,8 +264,12 @@
                     <li><a href="videos.html">Vídeos</a></li>
                     <li><a href="artigos.html">Artigos Científicos</a></li>
                     <li><a href="links.html">Links Úteis</a></li>
+                    <!-- Botão de fechar o menu -->
+                    <li class="menu-close"><i class="fas fa-times"></i></li>
                 </ul>
             </nav>
+            <!-- Overlay para quando o menu estiver aberto -->
+            <div class="overlay"></div>
         </div>
     </header>
 

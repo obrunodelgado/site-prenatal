@@ -22,6 +22,45 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Controles do menu hamburguer para dispositivos móveis
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuClose = document.querySelector('.menu-close');
+    const nav = document.querySelector('header nav');
+    const overlay = document.querySelector('.overlay');
+    const menuLinks = document.querySelectorAll('nav ul li a');
+    
+    // Função para abrir o menu
+    function openMenu() {
+        nav.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Previne scroll enquanto o menu estiver aberto
+    }
+    
+    // Função para fechar o menu
+    function closeMenu() {
+        nav.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = ''; // Restaura o scroll
+    }
+    
+    // Adiciona os eventos de clique
+    if (menuToggle) {
+        menuToggle.addEventListener('click', openMenu);
+    }
+    
+    if (menuClose) {
+        menuClose.addEventListener('click', closeMenu);
+    }
+    
+    if (overlay) {
+        overlay.addEventListener('click', closeMenu);
+    }
+    
+    // Fecha o menu quando um link é clicado
+    menuLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
     // Animação para os cards na página
     const cards = document.querySelectorAll('.card, .featured-item');
     
